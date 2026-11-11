@@ -74,18 +74,18 @@ selected_sido = st.sidebar.selectbox("시·도 선택", sido_list)
 accidents_count = st.sidebar.slider(
     "연간 사고건수", 
     min_value=0, 
-    max_value=50000, 
-    value=10000, 
-    step=100,
+    max_value=5000, 
+    value=1000, 
+    step=10,
     help="선택한 시·도의 1년 동안 발생한 총 사고건수를 입력하세요."
 )
 
 minor_injuries = st.sidebar.slider(
     "연간 경상자수", 
     min_value=0, 
-    max_value=100000, 
-    value=15000, 
-    step=500,
+    max_value=10000, 
+    value=1500, 
+    step=50,
     help="선택한 시·도의 1년 동안 발생한 총 경상자수를 입력하세요."
 )
 
