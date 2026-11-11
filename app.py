@@ -85,17 +85,17 @@ if predicted_deaths < 1.0:
     status = "GREEN"
     status_text = "🟢 안전 (위험도 낮음)"
     bg_color = "#e8f5e9"
-    border_color = "#2e7d32"
+    border_color = "green"
 elif predicted_deaths < 3.0:
     status = "YELLOW"
     status_text = "🟡 주의 (위험도 보통)"
     bg_color = "#fffde7"
-    border_color = "#fbc02d"
+    border_color = "white"
 else:
     status = "RED"
     status_text = "🔴 위험 (대형 사고 주의)"
     bg_color = "#ffebee"
-    border_color = "#c62828"
+    border_color = "black"
 
 # 대형 신호등 커스텀 UI (HTML/CSS)
 signal_html = f"""
