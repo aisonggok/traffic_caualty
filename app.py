@@ -51,11 +51,17 @@ def load_orange_model(model_path):
 
 model = load_orange_model("traffic_casualty_model.pkcls")
 
-# 메인 타이틀
+# 메인 설명 수정
 st.title("🚦 교통사고 사망자 수 실시간 예측 시스템")
-st.write("시도 선택 및 사고건수, 경상자수를 조절하여 예상 사망자 수와 안전 등급을 확인하세요.")
+st.write("시·도별 **연간 사고건수**와 **연간 경상자수**를 입력하여 **연간 예상 사망자 수**를 확인하세요.")
 
-st.divider()
+# 입력 슬라이더 라벨 수정
+accidents_count = st.sidebar.slider("연간 사고건수", min_value=0, max_value=50000, value=3000, step=100)
+minor_injuries = st.sidebar.slider("연간 경상자수", min_value=0, max_value=100000, value=5000, step=100)
+
+# 예측 결과 단위 명시
+st.subheader(f"📍 [{selected_sido}] 연간 예상 사망자 수")
+st.metric(label="예상 사망자 수 (1년 기준)", value=f"{predicted_deaths:.2f} 명")
 
 # 사이드바 입력 매개변수 설정
 st.sidebar.header("⚙️ 입력 매개변수 설정")
